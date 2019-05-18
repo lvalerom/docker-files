@@ -1,0 +1,15 @@
+# .gitignore file
+# The following files/folders will be ignored.
+
+*
+!*/
+*~
+
+# Add your build folders here
+
+# Exceptions
+
+!*.Dockerfile
+
+!.gitignore
+!README.md
