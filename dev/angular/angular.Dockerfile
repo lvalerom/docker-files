@@ -1,10 +1,9 @@
 FROM ubuntu
-RUN apt-get update
-#RUN apt-get install -y --no-install-recommends apt-utils
+#RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 # Repositories version
 #RUN apt-get -y install nodejs npm
 # v10
-RUN apt-get -y install curl
+RUN apt-get update && apt-get -y install curl
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get -y install nodejs
 # Install angularjs

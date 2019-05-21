@@ -1,6 +1,5 @@
 FROM ubuntu
-RUN apt-get update
-RUN apt-get -y install wget
+RUN apt-get update && apt-get -y install wget
 RUN apt-get -y install git
 RUN apt-get -y install autoconf automake libtool make g++ unzip
 RUN useradd -ms /bin/bash -d /home/dev dev 

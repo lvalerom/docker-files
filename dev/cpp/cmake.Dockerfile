@@ -1,7 +1,6 @@
 FROM ubuntu
-RUN apt-get update
 # Default installation
-RUN apt-get install -y build-essential
+RUN apt-get update && apt-get install -y build-essential
 RUN apt-get install -y cmake
 # Setting up the development environment
 RUN useradd -ms /bin/bash -d /home/dev dev
