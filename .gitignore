@@ -10,6 +10,7 @@
 # Exceptions
 
 !*.Dockerfile
+!*.sh
 
 !.gitignore
 !README.md
