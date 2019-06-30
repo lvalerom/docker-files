@@ -21,8 +21,8 @@ Change serve host to 0.0.0.0 in the angular.json config file \n\n \
     $ ng serve' > /home/dev/README
 # Material dependencies installation script
 RUN echo '#!/bin/bash \n \
-npm install --save @angular/material @angular/cdk @angular/animations hammerjs' > install-dependencies.sh
-RUN chmod +x install-dependencies.sh
+npm install --save @angular/material @angular/cdk @angular/animations hammerjs' > /home/dev/install-dependencies.sh
+RUN chmod +x /home/dev/install-dependencies.sh
 # Setting up the workspace
 RUN mkdir /home/dev/workspace
 WORKDIR /home/dev/workspace
