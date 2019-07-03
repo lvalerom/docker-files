@@ -23,11 +23,18 @@ USER dev
 RUN /usr/local/go/bin/go get -u github.com/golang/protobuf/proto
 RUN /usr/local/go/bin/go get -u github.com/golang/protobuf/protoc-gen-go
 RUN /usr/local/go/bin/go get github.com/micro/protoc-gen-micro
-#RUN /usr/local/go/bin/go get github.com/micro/go-micro
+# Micro
 RUN /usr/local/go/bin/go get -u github.com/micro/micro
-RUN /usr/local/go/bin/go get github.com/gin-gonic/gin
-RUN /usr/local/go/bin/go get github.com/micro/go-web
+RUN /usr/local/go/bin/go get -u github.com/micro/go-micro
+# Kubernetes
 RUN /usr/local/go/bin/go get k8s.io/client-go/...
+# 
+RUN /usr/local/go/bin/go get github.com/gin-gonic/gin
+RUN /usr/local/go/bin/go get github.com/gin-contrib/cors
+RUN /usr/local/go/bin/go get github.com/dgrijalva/jwt-go
+RUN /usr/local/go/bin/go get github.com/satori/go.uuid
+RUN /usr/local/go/bin/go get -u github.com/jinzhu/gorm
+RUN /usr/local/go/bin/go get github.com/lib/pq
 # RUN /usr/local/go/bin/go get github.com/go-sql-driver/mysql
 # RUN /usr/local/go/bin/go get github.com/jmoiron/sqlx
 RUN mkdir /home/dev/go/src/dev
