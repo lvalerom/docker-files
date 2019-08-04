@@ -26,6 +26,7 @@ RUN /usr/local/go/bin/go get github.com/micro/protoc-gen-micro
 # Micro
 RUN /usr/local/go/bin/go get -u github.com/micro/micro
 RUN /usr/local/go/bin/go get github.com/micro/go-micro
+RUN /usr/local/go/bin/go get -u github.com/micro/go-micro
 # Kubernetes
 RUN /usr/local/go/bin/go get k8s.io/client-go/...
 # 
