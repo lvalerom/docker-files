@@ -5,9 +5,9 @@ RUN apt-get -y install autoconf automake libtool make g++ unzip
 RUN useradd -ms /bin/bash -d /home/dev dev 
 RUN mkdir /home/dev/go
 RUN chown dev:dev /home/dev/go
-RUN wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf /go1.11.5.linux-amd64.tar.gz
-RUN rm /go1.11.5.linux-amd64.tar.gz
+RUN wget https://dl.google.com/go/go1.12.9.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf /go1.12.9.linux-amd64.tar.gz
+RUN rm /go1.12.9.linux-amd64.tar.gz
 RUN echo 'PATH=$PATH:/usr/local/go/bin:/home/dev/go/bin \
 	\nexport GOPATH=/home/dev/go' > /root/.bashrc
 RUN echo 'PATH=$PATH:/usr/local/go/bin:/home/dev/go/bin \
