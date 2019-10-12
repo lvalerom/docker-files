@@ -5,9 +5,9 @@ RUN apt-get -y install autoconf automake libtool make g++ unzip
 RUN useradd -ms /bin/bash -d /home/dev dev 
 RUN mkdir /home/dev/go
 RUN chown dev:dev /home/dev/go
-RUN wget https://dl.google.com/go/go1.12.9.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf /go1.12.9.linux-amd64.tar.gz
-RUN rm /go1.12.9.linux-amd64.tar.gz
+RUN wget https://dl.google.com/go/go1.13.1.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf /go1.13.1.linux-amd64.tar.gz
+RUN rm /go1.13.1.linux-amd64.tar.gz
 RUN echo 'PATH=$PATH:/usr/local/go/bin:/home/dev/go/bin \
 	\nexport GOPATH=/home/dev/go' > /root/.bashrc
 RUN echo 'PATH=$PATH:/usr/local/go/bin:/home/dev/go/bin \
@@ -28,6 +28,10 @@ RUN /usr/local/go/bin/go get -u github.com/micro/micro
 RUN /usr/local/go/bin/go get github.com/micro/go-micro
 RUN /usr/local/go/bin/go get -u github.com/micro/go-micro
 # Kubernetes
+# This is needed due to a bug with the k8s.io/client-go using an old version of the klog
+# Probably will break in the next client-go release
+RUN /usr/local/go/bin/go get k8s.io/klog && cd /home/dev/go/srv/k8s.io/klog && git checkout v0.4.0
+
 RUN /usr/local/go/bin/go get k8s.io/client-go/...
 # 
 RUN /usr/local/go/bin/go get github.com/gin-gonic/gin
