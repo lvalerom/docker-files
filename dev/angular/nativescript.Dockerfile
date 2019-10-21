@@ -32,6 +32,8 @@ RUN /usr/local/android/sdk/tools/bin/sdkmanager "tools" "emulator" "platform-too
 RUN npm install nativescript -g --unsafe-perm
 # angular cli
 RUN npm install -g @angular/cli
+RUN npm install -D @angular/cli
+RUN npm install --save-dev @nativescript/schematics
 # Setting up the development environment
 USER dev
 RUN mkdir -p /home/dev/workspace
