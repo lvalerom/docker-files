@@ -30,6 +30,8 @@ RUN yes | /usr/local/android/sdk/tools/bin/sdkmanager --licenses
 RUN /usr/local/android/sdk/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository" 
 # nativescript
 RUN npm install nativescript -g --unsafe-perm
+# angular cli
+RUN npm install -g @angular/cli
 # Setting up the development environment
 USER dev
 RUN mkdir -p /home/dev/workspace
