@@ -8,7 +8,7 @@ RUN apt-get install -y libcfitsio-dev wcslib-dev
 RUN mkdir -p /sirena/
 WORKDIR /sirena
 
-RUN wget https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/tarit/tarit.pl?mode=download&arch=src&src_pc_linux_ubuntu=Y&src_other_specify=&checkeverything=on&checkallmission=on&mission=asca&mission=einstein&mission=exosat&mission=gro&mission=heao1&mission=hitomi&mission=integral&mission=maxi&mission=nicer&mission=nustar&mission=oso8&mission=rosat&mission=suzaku&mission=swift&mission=vela5b&mission=xte&checkallgeneral=on&general=attitude&general=caltools&general=futils&general=fimage&general=heasarc&general=heasim&general=heasptools&general=heatools&general=heagen&general=fv&general=timepkg&checkallxanadu=on&xanadu=ximage&xanadu=xronos&xanadu=xspec&xstar=xstar
+RUN wget "https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/tarit/tarit.pl?mode=download&arch=src&src_pc_linux_ubuntu=Y&src_other_specify=&checkeverything=on&checkallmission=on&mission=asca&mission=einstein&mission=exosat&mission=gro&mission=heao1&mission=hitomi&mission=integral&mission=maxi&mission=nicer&mission=nustar&mission=oso8&mission=rosat&mission=suzaku&mission=swift&mission=vela5b&mission=xte&checkallgeneral=on&general=attitude&general=caltools&general=futils&general=fimage&general=heasarc&general=heasim&general=heasptools&general=heatools&general=heagen&general=fv&general=timepkg&checkallxanadu=on&xanadu=ximage&xanadu=xronos&xanadu=xspec&xstar=xstar"
 RUN tar xvzf heasoft-6.26.1src.tar.gz
 
 RUN cd /sirena/heasoft-6.26.1/BUILD_DIR && ./configure && make && make install
