@@ -6,9 +6,9 @@ RUN useradd -ms /bin/bash -d /home/dev dev
 RUN mkdir /home/dev/go
 RUN chown dev:dev /home/dev/go
 # Go installation
-RUN wget https://dl.google.com/go/go1.13.1.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf /go1.13.1.linux-amd64.tar.gz
-RUN rm /go1.13.1.linux-amd64.tar.gz
+RUN wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf /go1.14.2.linux-amd64.tar.gz
+RUN rm /go1.14.2.linux-amd64.tar.gz
 RUN echo 'PATH=$PATH:/usr/local/go/bin:/home/dev/go/bin \
 	\nexport GOPATH=/home/dev/go' > /root/.bashrc
 RUN echo 'PATH=$PATH:/usr/local/go/bin:/home/dev/go/bin \
