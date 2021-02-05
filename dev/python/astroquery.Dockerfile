@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 RUN apt-get update && apt-get -y install wget git gcc
 RUN useradd -ms /bin/bash -d /home/dev dev
 RUN chown dev:dev -R /home/dev
@@ -21,7 +21,8 @@ RUN conda create --name astroquery
 RUN echo "conda activate astroquery" > /home/dev/.bashrc
 RUN conda install -n astroquery -y pip
 RUN /home/dev/conda/envs/astroquery/bin/pip3 install -r /home/dev/astroquery/pip-requirements
-RUN /home/dev/conda/envs/astroquery/bin/pip3 install six curl pytest-astropy APLpy pyregion pyVO astropy-healpix regions mocpy boto3
+RUN /home/dev/conda/envs/astroquery/bin/pip3 install six curl pytest-astropy pyVO astropy-healpix regions mocpy boto3
+# pyregion APLpy
 #RUN /home/dev/conda/envs/astroquery/bin/python /home/dev/astroquery/setup.py install
 
 WORKDIR /home/dev
