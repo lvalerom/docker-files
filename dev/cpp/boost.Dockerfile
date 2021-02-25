@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 # Default installation
 RUN apt-get update && apt-get install -y build-essential
 RUN apt-get install -y cmake
