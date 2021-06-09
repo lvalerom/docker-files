@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 RUN apt-get update && apt-get -y install wget
 RUN useradd -ms /bin/bash -d /home/dev dev
 RUN chown dev:dev -R /home/dev
